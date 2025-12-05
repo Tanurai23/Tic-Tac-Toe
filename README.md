@@ -1,2 +1,2 @@
 # Tic-Tac-Toe
-My first hands-on front-end mini project! Tic-Tac-Toe made using HTML, CSS, and JavaScript with clean UI, smooth gameplay, and logic for checking winners and draws. A small project to practice DOM manipulation and basic game logic.
+My first hands-on front-end mini project! A basic web-based Tic-Tac-Toe application implemented using HTML, CSS, and JavaScript. This project showcases fundamental skills such as DOM manipulation, event handling, grid-based layout, and basic game logic implementation.
