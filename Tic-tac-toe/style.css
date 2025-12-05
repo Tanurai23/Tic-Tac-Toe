@@ -1,69 +1,120 @@
-*{
-    margin: 0;
-    padding : 0;
+/* Background */
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at top, #1b1b2f, #162447, #1f4068);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
 }
 
-body{
-    background-color: #4B4E6D;
-    text-align: center;
+/* Particle glow (light dots) */
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: url("https://i.imgur.com/MuVYI5T.png"); /* small particle texture */
+  opacity: 0.4;
 }
 
-.container{
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;   
+/* Game container */
+.game-container {
+  text-align: center;
+  color: #fff;
+  z-index: 5;
 }
 
-.game{
-    height: 60vmin;
-    width: 60vmin;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5vmin;
+/* Title with neon glow */
+.title {
+  font-size: 45px;
+  margin-bottom: 25px;
+  text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+  letter-spacing: 2px;
 }
 
-.box{
-    height: 18vmin;
-    width: 18vmin;
-    border-radius: 1rem;
-    border: none;
-    box-shadow: 0 0 1rem rgba(0,0,0,1);
-    font-size: 8vmin;
-    color: #222222;
-    background-color: #84DCC6;
+/* Glassmorphism board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  gap: 15px;
+  padding: 25px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
 }
 
-#reset-Btn{
-    padding: 1rem;
-    font-size: 1.25rem;
-    background-color:#222222;
-    color: #fff;
-    border-radius: 1rem;
-    border: none;
+/* Neon Buttons */
+.box {
+  height: 110px;
+  width: 110px;
+  font-size: 45px;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
 
-}
-
-#new-btn{
-    padding: 1rem;
-    font-size: 1.25rem;
-    background-color: black;
-    color: white;
-    border-radius: 1rem;
-    border: none;
+  /* neon glow off by default */
+  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+  transition: all 0.25s ease;
 }
 
-#msg{
-    color: ;
-    font-size : 8vmin;
+/* Hover effect */
+.box:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00fff2, 0 0 30px #00fff2;
 }
 
-.msg-container{
-    height:  30vmin;
+/* Click pulse */
+.box:active {
+  transform: scale(0.9);
 }
-.hide{
-    display:none;
+
+/* Winner highlight glow */
+.win-glow {
+  box-shadow: 0 0 25px #39ff14, 0 0 45px #39ff14 !important;
+  background: rgba(0, 255, 0, 0.2) !important;
 }
-    
+
+/* Buttons */
+.controls button {
+  margin: 20px 10px;
+  padding: 12px 25px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px #ff00ff88;
+  transition: 0.3s;
+}
+
+.controls button:hover {
+  background: rgba(255, 0, 255, 0.4);
+  transform: scale(1.1);
+}
+
+/* Message box */
+.msg-container {
+  margin-top: 20px;
+}
+
+#msg {
+  font-size: 32px;
+  padding: 15px 20px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.3);
+  box-shadow: 0 0 20px #ffe600;
+}
+
+.hide {
+  display: none;
+}
