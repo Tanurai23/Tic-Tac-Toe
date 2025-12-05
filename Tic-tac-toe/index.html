@@ -7,31 +7,41 @@
     <link rel ="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="msg-container hide">
-        <p id="msg">Winner</p>
-        <button id="new-btn"> New Game </button>
-    </div>
-    <main>
-       <h1>Tic-Tac-Toe</h1>
-       <div class="container">
-            <div class ="game">
-            <button class ="box"></button>
-            <button class ="box"></button>
-            <button class ="box"></button>
-            <button class ="box"></button>
-            <button class ="box"></button>
-            <button class ="box"></button>
-            <button class ="box"></button>
-            <button class ="box"></button>
-            <button class ="box"></button>
-           </div>
-       </div>  
-       
-       <button id="reset-Btn"> Reset Game</button>
-    </main>
+    <div class="game-container">
+  <h1 class="title">Tic Tac Toe</h1>
+
+  <div class="board">
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+  </div>
+
+  <div class="controls">
+    <button id="reset-Btn">Reset</button>
+    <button id="new-Btn">New Game</button>
+  </div>
+
+  <div class="msg-container hide">
+    <p id="msg"></p>
+  </div>
+
+  <!-- Sound Effects -->
+  <audio id="click-sound" src="music/mixkit-arcade-game-jump-coin-216.wav"></audio>
+  <audio id="win-sound" src="music/mixkit-winning-notification-2018.wav"></audio>
+</div>
+
    
     <script src="app.js"></script>
 </body>
 
 </html>
+
+</html>
+
 
